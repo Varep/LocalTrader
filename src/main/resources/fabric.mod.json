@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "localtrader",
+  "version": "${version}",
+  "name": "LocalTrader main",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/localtrader/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "ru.varep.localtrader.client.LocaltraderClient"
+    ],
+    "main": [
+      "ru.varep.localtrader.Localtrader"
+    ]
+  },
+  "mixins": [
+    "localtrader.mixins.json",
+    {
+      "config": "localtrader.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
